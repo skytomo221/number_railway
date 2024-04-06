@@ -9,6 +9,7 @@ GEM
     ast (2.4.2)
     backport (1.2.0)
     benchmark (0.3.0)
+    color (1.8)
     diff-lcs (1.5.0)
     e2mmap (0.1.0)
     jaro_winkler (1.5.6)
@@ -82,6 +83,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  color (~> 1.8)
   number_railway!
   rake (~> 13.0)
   rspec (~> 3.0)

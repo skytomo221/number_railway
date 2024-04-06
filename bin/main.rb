@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
+require "color"
 require "ruby-graphviz"
 
-START = 111
-GOAL = 999
+START = 1
+GOAL = 94
 
 class Integer # rubocop:disable Style/Documentation
   def divisors
@@ -72,10 +73,41 @@ def shortest_paths(start, goal, max_depth)
 end
 
 graphviz = GraphViz.new(:G, type: :graph, layout: :dot)
-sd = shortest_depth(START, GOAL)
+start, goal = [START, GOAL].minmax
+sd = shortest_depth(start, goal)
 puts "Shortest depth: #{sd}"
-shortest_paths(START, GOAL, sd).each do |e|
-  graphviz.add_edges(e.smaller.to_s, e.greater.to_s, label: e.distance.to_s)
+results = shortest_paths(start, goal, sd)
+
+def node_color(node)
+  start, goal = [START, GOAL].minmax
+  hue = (node - start) / (goal - start).to_f * 300
+  Color::HSL.new(hue, 90, 45).to_rgb.html
 end
 
+MAX_LINE = results.to_a.max { |a, b| a.distance <=> b.distance }
+MIN_LINE = results.to_a.min { |a, b| a.distance <=> b.distance }
+
+def line_color(line)
+  start, goal = [START, GOAL].minmax
+  hue = (line - MIN_LINE.distance) / (goal - start).to_f * 300
+  Color::HSL.new(hue, 90, 45).to_rgb.html
+end
+
+results.each do |e|
+  graphviz.add_nodes(e.smaller.to_s, color: node_color(e.smaller), penwidth: 3)
+  graphviz.add_nodes(e.greater.to_s, color: node_color(e.greater), penwidth: 3)
+  graphviz.add_edges(e.smaller.to_s, e.greater.to_s, label: e.distance.to_s, color: line_color(e.distance), penwidth: 3)
+end
+
+START_AND_GOAL_COLOR = Color::HSL.new(300, 90, 72.5).to_rgb.html
+
+graphviz.add_nodes(start.to_s, color: node_color(start), fillcolor: START_AND_GOAL_COLOR, style: :filled, penwidth: 3)
+graphviz.add_nodes(goal.to_s, color: node_color(goal), fillcolor: START_AND_GOAL_COLOR, style: :filled, penwidth: 3)
+
 graphviz.output(png: "sample.png")
+
+# puts((1..100).filter { |i| i % 4 == 1 }.map do |i|
+#   j = i + 4
+
+#   "[#{i}, #{j}, #{shortest_depth(i, j) || 0}]"
+# end.join(", "))

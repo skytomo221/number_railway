@@ -14,3 +14,5 @@ gem "rubocop", "~> 1.21"
 gem "solargraph"
 
 gem "ruby-graphviz"
+
+gem "color", "~> 1.8"
