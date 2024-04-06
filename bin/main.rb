@@ -45,29 +45,29 @@ def shortest_depth(start, goal, max_depth = goal - start)
   return if max_depth.zero?
 
   mut_max_depth = max_depth
-  start.divisors.reverse.map do |distance|
+  start.divisors_with_negative.reverse.map do |distance|
     return 1 if start + distance == goal
-    next if start + distance > goal
+    next if start + distance > goal * 2
 
     shortest = shortest_depth(start + distance, goal, mut_max_depth - 1)
     shortest && mut_max_depth = shortest + 1
   end.reject(&:nil?).min
 end
 
-def shortest_paths_recursive(start, goal, max_depth, distance, depth)
-  return Set[] if start + distance > goal
+def shortest_paths_recursive(start, goal, max_depth, distance)
+  return Set[] if start + distance > goal * 2
 
-  paths = shortest_paths(start + distance, goal, max_depth, depth + 1)
+  paths = shortest_paths(start + distance, goal, max_depth - 1)
   paths.empty? ? Set[] : paths.add(UndirectedEdge.new(start, start + distance))
 end
 
-def shortest_paths(start, goal, max_depth, depth = 0)
-  return Set[] if max_depth < depth
+def shortest_paths(start, goal, max_depth)
+  return Set[] if max_depth.zero?
 
-  start.divisors.reverse.map do |distance|
+  start.divisors_with_negative.reverse.map do |distance|
     return Set[UndirectedEdge.new(start, goal)] if start + distance == goal
 
-    shortest_paths_recursive(start, goal, max_depth, distance, depth)
+    shortest_paths_recursive(start, goal, max_depth, distance)
   end.to_set.flatten
 end
 
