@@ -7,8 +7,8 @@ require "number_railway"
 
 include NumberRailway # rubocop:disable Style/MixinUsage
 
-START = 122
-GOAL = 132
+START = 8
+GOAL = 18
 
 graphviz = GraphViz.new(:G, type: :graph, layout: :dot)
 start, goal = [Station[START], Station[GOAL]].minmax

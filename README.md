@@ -78,15 +78,30 @@ $\rm{IJT}$ は $R(m, n) = \lbrace\lbrace\langle m, k_1 \rangle, \langle k_1, n \
 $\rm{III}$ は $R(m, n) = \lbrace\lbrace\langle m, k_1 \rangle, \langle k_1, n \rangle\rbrace, \lbrace\langle m, k_2 \rangle, \langle k_2, n \rangle\rbrace, \lbrace\langle m, k_3 \rangle, \langle k_3, n \rangle\rbrace\rbrace$ で $m < k_1 < k_2 < k_3 < n$ となるパスとなるパターンです。
 最小の例は $R(8, 18) = \lbrace\lbrace\langle 8, 9 \rangle, \langle 9, 18 \rangle\rbrace, \lbrace\langle 8, 12 \rangle, \langle 12, 18 \rangle\rbrace, \lbrace\langle 8, 16 \rangle, \langle 16, 18 \rangle\rbrace\rbrace$ です。
 
+![W(8, 18)](./images/W(8,%2018).png)
+
 #### I4型
 
 $\rm{I4}$ (IIII)は $R(m, n) = \lbrace\lbrace\langle m, k_1 \rangle, \langle k_1, n \rangle\rbrace, \lbrace\langle m, k_2 \rangle, \langle k_2, n \rangle\rbrace, \lbrace\langle m, k_3 \rangle, \langle k_3, n \rangle\rbrace, \lbrace\langle m, k_4 \rangle, \langle k_4, n \rangle\rbrace\rbrace$ で $m < k_1 < k_2 < k_3 < k_4 < n$ となるパスとなるパターンです。
 最小の例は $R(54, 84) = \lbrace\lbrace\langle 54, 56 \rangle, \langle 56, 84 \rangle\rbrace, \lbrace\langle 54, 63 \rangle, \langle 63, 84 \rangle\rbrace, \lbrace\langle 54, 72 \rangle, \langle 72, 84 \rangle\rbrace, \lbrace\langle 54, 81 \rangle, \langle 81, 84 \rangle\rbrace\rbrace$ です。
 
+![W(54, 84)](./images/W(54,%2084).png)
+
 #### I5型
 
 $\rm{I5}$ は $R(m, n) = \lbrace\lbrace\langle m, k_1 \rangle, \langle k_1, n \rangle\rbrace, \lbrace\langle m, k_2 \rangle, \langle k_2, n \rangle\rbrace, \lbrace\langle m, k_3 \rangle, \langle k_3, n \rangle\rbrace, \lbrace\langle m, k_4 \rangle, \langle k_4, n \rangle\rbrace, \lbrace\langle m, k_5 \rangle, \langle k_5, n \rangle\rbrace\rbrace$ で $m < k_1 < k_2 < k_3 < k_4 < k_5 < n$ となるパスとなるパターンです。
-最小の例は $R(312, 378) = \lbrace\lbrace\langle 312, 315 \rangle, \langle 315, 378 \rangle\rbrace, \lbrace\langle 312, 324 \rangle, \langle 324, 378 \rangle\rbrace, \lbrace\langle 312, 336 \rangle, \langle 336, 378 \rangle\rbrace, \lbrace\langle 312, 351 \rangle, \langle 351, 378 \rangle\rbrace, \lbrace\langle 312, 364 \rangle, \langle 364, 378 \rangle\rbrace\rbrace$ です。
+最小の例は $(312, 378)$ です。パスは以下の通りです。
+$$
+\begin{aligned}
+R(312, 378) = \lbrace& \lbrace\langle 312, 315 \rangle, \langle 315, 378 \rangle\rbrace, \\
+                     & \lbrace\langle 312, 324 \rangle, \langle 324, 378 \rangle\rbrace, \\
+                     & \lbrace\langle 312, 336 \rangle, \langle 336, 378 \rangle\rbrace, \\
+                     & \lbrace\langle 312, 351 \rangle, \langle 351, 378 \rangle\rbrace, \\
+                     & \lbrace\langle 312, 364 \rangle, \langle 364, 378 \rangle\rbrace\rbrace
+\end{aligned}
+$$
+
+![W(312, 378)](./images/W(312,%20378).png)
 
 ## Installation
 
