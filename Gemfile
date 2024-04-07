@@ -16,3 +16,5 @@ gem "solargraph"
 gem "ruby-graphviz"
 
 gem "color", "~> 1.8"
+
+gem "prime", "~> 0.1.2"
