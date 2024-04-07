@@ -1,7 +1,5 @@
 # NumberRailway
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/number/railway`. To experiment with that code, run `bin/console` for an interactive prompt.
-
 駅の名前が自然数で、そこに倍数の路線が通っているという自然数鉄道があったとします。
 1の倍数線は、1の駅、2の駅、3の駅……と続いていき、
 2の倍数線は、2の駅、4の駅、6の駅……と続いていき、
@@ -18,8 +16,6 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 さらに、4の倍数線で8の駅で降りて、2の倍数線に乗り換えて10の駅に行けば、2つの駅で行くことができます。
 もう一つ、1の倍数線で5の駅で降りて、5の倍数線に乗り換えて10の駅に行く方法でも2つの駅で行くことができます。
 このとき、任意の二駅間を最も少ない駅数で行く方法を求めるにはどうしたらいいでしょうか？
-
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -51,4 +47,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Number::Railway project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/number-railway/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the NumberRailway project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/number-railway/blob/main/CODE_OF_CONDUCT.md).

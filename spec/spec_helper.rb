@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "number/railway"
+require "number_railway"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
